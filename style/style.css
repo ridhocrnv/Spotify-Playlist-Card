@@ -26,7 +26,7 @@ body {
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
     transition: transform 0.3s ease;
     padding: 16px;
-    cursor: pointer;
+    /* Hapus 'cursor: pointer;' jika card tidak bisa diklik */
 }
 
 .card:hover {
@@ -73,7 +73,8 @@ body {
 
 .title a:hover {
     color: #1DB954;
-    text-decoration: underline; /* Warna hijau khas Spotify */
+    text-decoration: underline;
+    /* Warna hijau khas Spotify */
 }
 
 .subtitle {
@@ -104,39 +105,27 @@ body {
 /* ========= GAYA FOOTER ========= */
 
 .site-footer {
-    /* Jarak di atas/bawah dan kiri/kanan */
-
-    /* Flexbox untuk pemusatan */
     display: flex;
     justify-content: center;
-    /* Memusatkan secara horizontal */
     align-items: center;
-    /* Memusatkan secara vertikal */
-
     text-align: center;
-    /* Penjajaran teks (penting untuk mobile) */
+    /* TAMBAHAN: Memberi jarak dari card di atasnya */
+    margin-top: 24px;
 }
 
 .footer-text {
     margin: 0;
-    /* Menghapus margin default dari paragraf */
     font-size: 0.9rem;
     color: #b3b3b3;
-    /* Ukuran font sedikit lebih kecil */
     font-family: 'Stack Sans Headline', sans-serif;
 }
 
 .heart-icon {
     color: #e74c3c;
-    /* Warna merah untuk hati */
-
-    /* Animasi berdetak */
     display: inline-block;
-    /* Diperlukan agar animasi 'transform' berfungsi */
     animation: pulse 0.75s infinite;
 }
 
-/* Keyframes untuk animasi 'pulse' */
 @keyframes pulse {
     0% {
         transform: scale(1);
@@ -148,5 +137,123 @@ body {
 
     100% {
         transform: scale(1);
+    }
+}
+
+/* ========= GAYA AUDIO PLAYER (TAMBAHAN) ========= */
+
+.audio-container {
+    margin-top: 24px;
+    padding: 12px;
+    background-color: rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+}
+
+.audio-info {
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.audio-info #title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 4px;
+}
+
+.audio-info #artist {
+    font-size: 13px;
+    font-weight: 400;
+    color: #b3b3b3;
+    margin-bottom: 12px;
+}
+
+/* === Progress Bar & Timestamps === */
+
+.progress-container {
+    background-color: #555;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px 0;
+    height: 5px;
+    width: 100%;
+}
+
+.progress-bar {
+    background-color: #1DB954;
+    border-radius: 5px;
+    height: 100%;
+    width: 0%;
+    transition: width 0.1s linear;
+}
+
+.timestamps {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    font-weight: 300;
+    color: #b3b3b3;
+}
+
+/* === Tombol Kontrol (Play/Prev/Next) === */
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    margin-top: 16px;
+}
+
+.controls button {
+    background: none;
+    border: none;
+    color: #b3b3b3;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.controls button:hover {
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
+.controls button#play {
+    font-size: 40px;
+    Mina color: #ffffff;
+}
+
+/* ========= ANIMASI JUDUL MARQUEE (TAMBAHAN) ========= */
+
+/* Kontainer judul (h4) */
+.audio-info #title {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    text-align: left;
+    /* Default ke kiri, JS akan mengaturnya ke tengah jika pendek */
+}
+
+/* Span di dalamnya (secara default TIDAK BERGERAK) */
+.audio-info #title span {
+    display: inline-block;
+    white-space: nowrap;
+}
+
+/* HANYA jika .is-overflowing ditambahkan oleh JS, terapkan animasi */
+.audio-info #title.is-overflowing span {
+    animation: marquee-scroll-v2 12s linear infinite;
+}
+
+/* Keyframe untuk animasi looping */
+@keyframes marquee-scroll-v2 {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
     }
 }

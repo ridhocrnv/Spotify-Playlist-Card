@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="style/style.css">
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" /> -->
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <meta property="og:title" content="Kita Berdua - Playlist" />
     <meta property="og:description" content="Sebuah playlist spesial oleh ridhocrnv untuk Yusnida." />
     <meta property="og:image" content="https://spotify-playlist-card.vercel.app/src/preview.png" />
@@ -18,11 +22,6 @@
 
 <body>
 
-    <audio controls autoplay loop hidden>
-        <source src="src/aku-dan-dirimu.mp3" type="audio/mpeg">
-        Browser Anda tidak mendukung tag audio.
-    </audio>
-
     <div class="card">
         <div class="video-container">
             <video autoplay loop muted playsinline>
@@ -32,7 +31,8 @@
         </div>
         <div class="card-content">
             <div class="title">
-                <a href="https://open.spotify.com/playlist/144W82ALSovAQX2ttZMpu2?si=tqqzf1DMTGC0_-oB19qp0A" target="_blank" rel="noopener">Kita
+                <a href="https://open.spotify.com/playlist/144W82ALSovAQX2ttZMpu2?si=tqqzf1DMTGC0_-oB19qp0A"
+                    target="_blank" rel="noopener">Kita
                     Berdua</a>
             </div>
             <div class="subtitle">Playlist oleh ridhocrnv</div>
@@ -43,16 +43,25 @@
                 <span>Spotify</span>
             </div>
             <div class="audio-container">
-            <div class="audio-info">
-                <h4 id="title">Song Title</h4>
-                <!-- Add elements for progress bar, current time, duration etc. -->
-            </div>
-            <audio id="audio" src="path/to/your/song.mp3"></audio>
-            <div class="controls">
-                <button id="play">Play</button>
-                <button id="pause">Pause</button>
-                <button id="next">Next</button>
-                <button id="prev">Previous</button>
+                <div class="audio-info">
+                    <h4 id="title">Aku dan Dirimu (feat. Ari Lasso)</h4>
+                    <h5 id="artist">Bunga Citra Lestari, Ari Lasso</h5>
+                    <!-- Add elements for progress bar, current time, duration etc. -->
+                    <div class="progress-container" id="progress-container">
+                        <div class="progress-bar" id="progress-bar"></div>
+                    </div>
+
+                    <div class="timestamps">
+                        <span id="current-time">0:00</span>
+                        <span id="total-duration">0:00</span>
+                    </div>
+                </div>
+                <audio id="audio" src="src/aku-dan-dirimu.mp3"></audio>
+                <div class="controls">
+                    <button id="prev"><i class="fa-solid fa-angles-left"></i></button>
+                    <button id="play"><i class="fa-solid fa-play"></i></button>
+                    <button id="next"><i class="fa-solid fa-angles-right"></i></button>
+                </div>
             </div>
         </div>
     </div>
@@ -62,6 +71,8 @@
             Made with <span class="heart-icon">&hearts;</span> Yusnida
         </p>
     </footer>
+
+    <script src="script/script.js"></script>
 
 </body>
 
