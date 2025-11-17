@@ -27,14 +27,44 @@ const songs = [
         src: 'src/aku-dan-dirimu.mp3' // Sesuai dengan HTML Anda
     },
     {
-        title: 'Hati-Hati di Jalan',
-        artist: 'Tulus',
-        src: 'src/aku-dan-dirimu.mp3' // Ganti dengan path file Anda
+        title: 'Til Death Do Us Part',
+        artist: 'White Lion',
+        src: 'src/til-death-do-us-part.mp3' // Ganti dengan path file Anda
     },
     {
-        title: 'Sempurna',
-        artist: 'Andra And The BackBone',
-        src: 'src/aku-dan-dirimu.mp3' // Ganti dengan path file Anda
+        title: "You're All I Need",
+        artist: 'White Lion',
+        src: 'src/youre-all-i-need.mp3' // Ganti dengan path file Anda
+    },
+    {
+        title: "I Live My Life for You",
+        artist: 'Firehouse',
+        src: 'src/i-live-my-life-for-you.mp3' // Ganti dengan path file Anda
+    },
+    {
+        title: "When I Look Into Your Eyes",
+        artist: 'Firehouse',
+        src: 'src/when-i-look-into-your-eyes.mp3' // Ganti dengan path file Anda
+    },
+    {
+        title: "I'll Be There For You",
+        artist: 'Bon Jovi',
+        src: 'src/ill-be-there-for-you.mp3' // Ganti dengan path file Anda
+    },
+    {
+        title: "Making Love Out of Nothing at All",
+        artist: 'Air Supply',
+        src: 'src/making-love-air-supply.mp3' // Ganti dengan path file Anda
+    },
+    {
+        title: "If I Had A Gun",
+        artist: "Noel Gallagher's High Flying Birds",
+        src: 'src/if-i-had-a-gun.mp3' // Ganti dengan path file Anda
+    },
+    {
+        title: "Gunslinger",
+        artist: "Avenged Sevenfold",
+        src: 'src/gunslinger.mp3' // Ganti dengan path file Anda
     }
     // ... tambahkan lagu lain di sini
 ];
