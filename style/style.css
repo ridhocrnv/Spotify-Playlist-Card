@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(180deg, #d4847d 0%, #1f1f1f 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.card {
+    background: linear-gradient(180deg, #3a2322 0%, #2d2d2d 50%, #1f1f1f 100%);
+    border-radius: 12px;
+    width: 100%;
+    max-width: 320px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+    padding: 16px;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-top: 100%;
+    /* Aspect ratio 1:1 */
+    background: #fff;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 12px;
+    color: white;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    letter-spacing: 0.3px;
+}
+
+.title a {
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+    transition: color 0.3s ease;
+}
+
+.title a:hover {
+    color: #1DB954;
+    text-decoration: underline; /* Warna hijau khas Spotify */
+}
+
+.subtitle {
+    font-size: 16px;
+    color: #b3b3b3;
+    margin-bottom: 20px;
+}
+
+.spotify-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.spotify-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+}
+
+/* ========= GAYA FOOTER ========= */
+
+.site-footer {
+    /* Jarak di atas/bawah dan kiri/kanan */
+
+    /* Flexbox untuk pemusatan */
+    display: flex;
+    justify-content: center;
+    /* Memusatkan secara horizontal */
+    align-items: center;
+    /* Memusatkan secara vertikal */
+
+    text-align: center;
+    /* Penjajaran teks (penting untuk mobile) */
+}
+
+.footer-text {
+    margin: 0;
+    /* Menghapus margin default dari paragraf */
+    font-size: 0.9rem;
+    color: #b3b3b3;
+    /* Ukuran font sedikit lebih kecil */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.heart-icon {
+    color: #e74c3c;
+    /* Warna merah untuk hati */
+
+    /* Animasi berdetak */
+    display: inline-block;
+    /* Diperlukan agar animasi 'transform' berfungsi */
+    animation: pulse 0.75s infinite;
+}
+
+/* Keyframes untuk animasi 'pulse' */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
