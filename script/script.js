@@ -79,7 +79,7 @@ let songIndex = 0;
 function loadSong(song) {
     // 1. Selalu reset class dan alignment
     title.classList.remove('is-overflowing');
-    title.style.textAlign = 'left'; // Kembalikan ke default
+    title.style.textAlign = 'center'; // Kembalikan ke default
 
     // 2. Set judul TUNGGAL (single title)
     // Pengecekan Marquee akan dilakukan di event 'loadedmetadata'
@@ -238,7 +238,7 @@ audio.addEventListener('loadedmetadata', () => {
         if (isOverflowing) {
             // JIKA YA (Judulnya panjang):
             // Gandakan teksnya dan tambahkan class untuk animasi
-            const marqueeText = `${song.title} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ${song.title} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`;
+            const marqueeText = `${songs[songIndex].title} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ${songs[songIndex].title} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`;
             titleSpan.innerHTML = marqueeText;
             title.classList.add('is-overflowing');
         } else {
