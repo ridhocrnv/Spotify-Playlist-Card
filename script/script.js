@@ -61,6 +61,11 @@ const songs = [
         src: 'src/if-i-had-a-gun.mp3'
     },
     {
+        title: "You and I (cover. Dimas Senopati) Acoustic",
+        artist: "Scorpions",
+        src: 'src/you-and-i.mp3'
+    },
+    {
         title: "Gunslinger",
         artist: "Avenged Sevenfold",
         src: 'src/gunslinger.mp3'
