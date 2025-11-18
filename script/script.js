@@ -18,53 +18,52 @@ const totalDurationEl = document.getElementById('total-duration');
 const playIcon = playButton.querySelector('i');
 
 // --- 2. Data Playlist ---
-// (!! PENTING: Ganti dengan lagu dan path file Anda)
 
 const songs = [
     {
         title: 'Aku dan Dirimu (feat. Ari Lasso)',
         artist: 'Bunga Citra Lestari, Ari Lasso',
-        src: 'src/aku-dan-dirimu.mp3' // Sesuai dengan HTML Anda
+        src: 'src/aku-dan-dirimu.mp3'
     },
     {
         title: 'Til Death Do Us Part',
         artist: 'White Lion',
-        src: 'src/til-death-do-us-part.mp3' // Ganti dengan path file Anda
+        src: 'src/til-death-do-us-part.mp3'
     },
     {
         title: "You're All I Need",
         artist: 'White Lion',
-        src: 'src/youre-all-i-need.mp3' // Ganti dengan path file Anda
+        src: 'src/youre-all-i-need.mp3'
     },
     {
         title: "I Live My Life for You",
         artist: 'Firehouse',
-        src: 'src/i-live-my-life-for-you.mp3' // Ganti dengan path file Anda
+        src: 'src/i-live-my-life-for-you.mp3'
     },
     {
         title: "When I Look Into Your Eyes",
         artist: 'Firehouse',
-        src: 'src/when-i-look-into-your-eyes.mp3' // Ganti dengan path file Anda
+        src: 'src/when-i-look-into-your-eyes.mp3'
     },
     {
         title: "I'll Be There For You",
         artist: 'Bon Jovi',
-        src: 'src/ill-be-there-for-you.mp3' // Ganti dengan path file Anda
+        src: 'src/ill-be-there-for-you.mp3'
     },
     {
         title: "Making Love Out of Nothing at All",
         artist: 'Air Supply',
-        src: 'src/making-love-air-supply.mp3' // Ganti dengan path file Anda
+        src: 'src/making-love-air-supply.mp3'
     },
     {
         title: "If I Had A Gun",
         artist: "Noel Gallagher's High Flying Birds",
-        src: 'src/if-i-had-a-gun.mp3' // Ganti dengan path file Anda
+        src: 'src/if-i-had-a-gun.mp3'
     },
     {
         title: "Gunslinger",
         artist: "Avenged Sevenfold",
-        src: 'src/gunslinger.mp3' // Ganti dengan path file Anda
+        src: 'src/gunslinger.mp3'
     }
     // ... tambahkan lagu lain di sini
 ];
