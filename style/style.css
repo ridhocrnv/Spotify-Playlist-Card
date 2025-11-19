@@ -21,7 +21,7 @@ body {
     background: linear-gradient(180deg, #3a2322 0%, #2d2d2d 50%, #1f1f1f 100%);
     border-radius: 12px;
     width: 100%;
-    max-width: 320px;
+    max-width: 280px;
     overflow: hidden;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
     transition: transform 0.3s ease;
@@ -143,7 +143,6 @@ body {
 /* ========= GAYA AUDIO PLAYER (TAMBAHAN) ========= */
 
 .audio-container {
-    margin-top: 24px;
     padding: 12px;
     background-color: rgba(0, 0, 0, 0.15);
     border-radius: 8px;
