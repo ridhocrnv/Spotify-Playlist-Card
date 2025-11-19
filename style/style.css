@@ -11,36 +11,41 @@ body {
     background: linear-gradient(180deg, #d4847d 0%, #1f1f1f 100%);
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center; /* Changed from space-around to center for better vertical centering */
     align-items: center;
     min-height: 100vh;
     padding: 20px;
+    gap: 20px; /* Add gap between card and footer */
 }
 
 .card {
     background: linear-gradient(180deg, #3a2322 0%, #2d2d2d 50%, #1f1f1f 100%);
     border-radius: 12px;
     width: 100%;
-    max-width: 280px;
+    max-width: 320px; /* UPDATED: 280px terlalu sempit, 320px lebih pas di mobile modern */
+    /* max-height dihapus agar card bisa menyesuaikan isi lirik tanpa terpotong jelek */
     overflow: hidden;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
     transition: transform 0.3s ease;
-    padding: 16px;
-    /* Hapus 'cursor: pointer;' jika card tidak bisa diklik */
+    padding: 20px; /* Sedikit lebih lega dari 16px */
 }
 
 .card:hover {
     transform: translateY(-5px);
+    -webkit-transform: translateY(-5px);
+    -moz-transform: translateY(-5px);
+    -ms-transform: translateY(-5px);
+    -o-transform: translateY(-5px);
 }
 
 .video-container {
     position: relative;
     width: 100%;
     padding-top: 100%;
-    /* Aspect ratio 1:1 */
     background: #fff;
     overflow: hidden;
     border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3); /* Tambahan shadow biar gambar 'pop' */
 }
 
 .video-container video {
@@ -53,14 +58,14 @@ body {
 }
 
 .card-content {
-    padding: 12px;
+    padding: 16px 4px 0 4px; /* Adjusted padding */
     color: white;
 }
 
 .title {
-    font-size: 24px;
+    font-size: 22px; /* Adjusted size for balance */
     font-weight: 800;
-    margin-bottom: 8px;
+    margin-bottom: 4px;
     letter-spacing: 0.4px;
 }
 
@@ -74,13 +79,12 @@ body {
 .title a:hover {
     color: #1DB954;
     text-decoration: underline;
-    /* Warna hijau khas Spotify */
 }
 
 .subtitle {
     font-size: 14px;
     color: #b3b3b3;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
 }
 
 .spotify-logo {
@@ -89,17 +93,12 @@ body {
     gap: 8px;
     font-size: 14px;
     font-weight: 600;
+    margin-bottom: 10px; /* Spacing ke player */
 }
 
-.spotify-icon {
+.spotify-icon img {
     width: 24px;
     height: 24px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-weight: bold;
 }
 
 /* ========= GAYA FOOTER ========= */
@@ -109,87 +108,108 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
+    width: 100%;
+    padding-bottom: 10px;
 }
 
 .footer-text {
     margin: 0;
-    font-size: 0.9rem;
-    color: #b3b3b3;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.5); /* Lebih soft warnanya */
     font-family: 'Stack Sans Headline', sans-serif;
 }
 
 .heart-icon {
     color: #e74c3c;
     display: inline-block;
-    animation: pulse 0.75s infinite;
+    animation: pulse 1.5s infinite ease-in-out; /* Smoother animation */
 }
 
 @keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.15);
-    }
-
-    100% {
-        transform: scale(1);
-    }
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
 }
 
-/* ========= GAYA AUDIO PLAYER (TAMBAHAN) ========= */
+/* ========= GAYA AUDIO PLAYER ========= */
 
 .audio-container {
-    padding: 12px;
-    background-color: rgba(0, 0, 0, 0.15);
-    border-radius: 8px;
+    padding: 0 4px; /* Alignment fix */
+    margin-top: 10px;
+    /* Background dihapus agar lebih clean menyatu dengan card gradient */
 }
 
 .audio-info {
-    text-align: center;
-    margin-bottom: 12px;
+    text-align: center; /* Spotify style biasanya rata kiri untuk info playing */
+    margin-bottom: 15px;
 }
 
 .audio-info #title {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 700;
     color: #ffffff;
     margin-bottom: 4px;
 }
 
 .audio-info #artist {
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 400;
     color: #b3b3b3;
-    margin-bottom: 12px;
 }
 
 /* === Progress Bar & Timestamps === */
 
 .progress-container {
-    background-color: #555;
+    background-color: rgba(255, 255, 255, 0.3); /* Lebih transparan */
     border-radius: 5px;
     cursor: pointer;
-    margin: 10px 0;
-    height: 5px;
+    margin: 10px 0 5px 0;
+    height: 4px; /* Visual height */
     width: 100%;
+    /* UX FIX: Padding transparan untuk memperbesar area sentuh jari */
+    padding: 6px 0; 
+    background-clip: content-box; /* Agar background hanya di content (garis tipis) */
 }
 
 .progress-bar {
-    background-color: #1DB954;
+    background-color: #ffffff; /* Spotify playing bar biasanya putih, hijau kalau hover/active */
     border-radius: 5px;
-    height: 100%;
+    height: 4px; /* Harus sama dengan content height container */
     width: 0%;
     transition: width 0.1s linear;
+    position: relative;
+}
+
+/* Titik di ujung progress bar (Knob) */
+.progress-bar::after {
+    content: '';
+    position: absolute;
+    right: -4px;
+    top: -3px;
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 4px rgba(0,0,0,0.5);
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.2s;
+}
+
+.progress-container:hover .progress-bar {
+    background-color: #1DB954; /* Hijau saat dihover */
+}
+
+.progress-container:hover .progress-bar::after {
+    opacity: 1; /* Muncul saat dihover */
 }
 
 .timestamps {
     display: flex;
     justify-content: space-between;
     font-size: 11px;
-    font-weight: 300;
-    color: #b3b3b3;
+    font-weight: 400;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 10px;
 }
 
 /* === Tombol Kontrol (Play/Prev/Next) === */
@@ -198,59 +218,151 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 24px;
-    margin-top: 16px;
+    gap: 30px; /* Jarak antar tombol lebih lega */
+    margin-bottom: 20px;
 }
 
 .controls button {
     background: none;
     border: none;
-    color: #b3b3b3;
-    font-size: 20px;
+    color: rgba(255,255,255,0.7);
+    font-size: 24px;
     cursor: pointer;
     transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .controls button:hover {
     color: #ffffff;
-    transform: scale(1.1);
 }
 
 .controls button#play {
-    font-size: 40px;
-    color: #ffffff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #fff; /* Tombol play putih bulat ala Spotify */
+    color: #000; /* Icon hitam */
+    font-size: 20px;
+    padding-left: 3px; /* Visual center fix untuk icon play */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
-/* ========= ANIMASI JUDUL MARQUEE (TAMBAHAN) ========= */
+.controls button#play:hover {
+    transform: scale(1.05);
+    background: #f0f0f0;
+}
 
-/* Kontainer judul (h4) */
+/* Jika icon berubah jadi pause, hilangkan padding correction */
+.controls button#play:has(.fa-pause) {
+    padding-left: 0; 
+}
+
+/* ========= ANIMASI JUDUL MARQUEE ========= */
+
 .audio-info #title {
     width: 100%;
     overflow: hidden;
     white-space: nowrap;
     position: relative;
-    text-align: left;
-    /* Default ke kiri, JS akan mengaturnya ke tengah jika pendek */
+    display: block;
 }
 
-/* Span di dalamnya (secara default TIDAK BERGERAK) */
 .audio-info #title span {
     display: inline-block;
-    white-space: nowrap;
 }
 
-/* HANYA jika .is-overflowing ditambahkan oleh JS, terapkan animasi */
 .audio-info #title.is-overflowing span {
-    animation: marquee-scroll-v2 12s linear infinite;
+    animation: marquee-scroll-v2 10s linear infinite;
 }
 
-/* Keyframe untuk animasi looping */
 @keyframes marquee-scroll-v2 {
-    0% {
-        transform: translateX(0);
-    }
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
 
-    100% {
-        transform: translateX(-50%);
-    }
+/* --- LYRICS STYLE (FINAL FIX) --- */
+.lyrics-container {
+    height: 140px; 
+    overflow-y: auto;
+    text-align: center;
+    position: relative;
+    
+    /* Masking agar lirik terlihat memudar halus di atas & bawah */
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);
+    mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);
+    
+    /* Sembunyikan scrollbar */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    scroll-behavior: smooth;
+}
+
+.lyrics-container::-webkit-scrollbar { 
+    display: none;
+}
+
+#lyrics-list {
+    list-style: none;
+    margin: 0;
+    
+    /* KUNCI PERBAIKAN POSISI TENGAH: */
+    /* Memberi bantalan kosong di atas dan bawah list */
+    /* Agar baris pertama dan TERAKHIR bisa discroll tepat ke tengah */
+    padding-block: 60px; 
+    
+    transition: transform 0.3s ease-out;
+}
+
+#lyrics-list li {
+    color: rgba(255, 255, 255, 0.2); /* Non-aktif jadi sangat pudar/gelap */
+    font-size: 14px;
+    margin: 12px 0; /* Jarak antar baris */
+    font-weight: 600;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1); /* Animasi lebih smooth */
+    cursor: default;
+    line-height: 1.4;
+    filter: blur(0.5px); /* Sedikit blur untuk yang tidak aktif */
+    transform: scale(0.95);
+}
+
+/* Style saat lirik aktif */
+#lyrics-list li.active {
+    color: #ffffff; /* Putih terang */
+    font-size: 18px; 
+    font-weight: 800;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+    transform: scale(1.1); /* Lebih besar */
+    filter: blur(0px);
+    opacity: 1;
+    margin: 20px 0; /* Memberi ruang ekstra khusus baris aktif */
+}
+
+/* --- STYLE KHUSUS SAAT TIDAK ADA LIRIK --- */
+/* Class ini akan ditambahkan oleh JS */
+.lyrics-container.empty-state {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Matikan scroll */
+    -webkit-mask-image: none; /* Hapus mask agar teks jelas */
+    mask-image: none;
+}
+
+.lyrics-container.empty-state #lyrics-list {
+    padding-block: 0; /* Hapus padding bantalan */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.lyrics-container.empty-state li {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+    margin: 4px 0;
+    filter: none;
+    transform: none;
 }
