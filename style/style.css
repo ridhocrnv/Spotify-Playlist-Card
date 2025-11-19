@@ -109,8 +109,6 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    /* TAMBAHAN: Memberi jarak dari card di atasnya */
-    margin-top: 14px;
 }
 
 .footer-text {
