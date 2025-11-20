@@ -39,7 +39,6 @@ const songs = [
         artist: 'White Lion',
         src: 'src/til-death-do-us-part.mp3',
         lyrics: [
-            {time: 0, text: "And there's nothin'world"},
             {time: 0, text: "In this world"},
             {time: 2.5, text: "That I know I wouldn't do"},
             {time: 6.5, text: "To be near you every day"},
