@@ -175,7 +175,7 @@ const songs = [
             {time: 19.8, text: "I'm holding on"},
             {time: 21.0, text: "I'm waiting for"},
             {time: 22.5, text: "The moment to find me"},
-        ] // Kosongkan array jika belum sempat isi lirik
+        ]
     },
     {
         title: "Gunslinger",
