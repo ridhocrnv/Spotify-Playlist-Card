@@ -103,6 +103,22 @@ const songs = [
             {time: 58.5, text: "I just can't live without you"},
         ] // Kosongkan array jika belum sempat isi lirik
     },
+    {
+        title: "When I Look Into Your Eyes",
+        artist: 'Firehouse',
+        src: 'src/when-i-look-into-your-eyes.mp3',
+        lyrics: [
+            {time: 0, text: "'Cause I see my whole world"},
+            {time: 3.0, text: "I see only you"},
+            {time: 6.5, text: "When I look into your eyes"},
+            {time: 13.0, text: "I can see how much I love you"},
+            {time: 15.7, text: "And it makes me realize"},
+            {time: 19.4, text: "When I look into your eyes"},
+            {time: 25.8, text: "I see all my dreams come true"},
+            {time: 29.4, text: "When I look into your eyes"},
+            {time: 33.5, text: "♫"},
+        ] // Kosongkan array jika belum sempat isi lirik
+    },
     // ... tambahkan lagu lain di sini ...
 ];
 
