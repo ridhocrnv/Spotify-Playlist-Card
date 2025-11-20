@@ -159,7 +159,49 @@ const songs = [
             {time: 38.3, text: "♫"},
         ] // Kosongkan array jika belum sempat isi lirik
     },
-    // ... tambahkan lagu lain di sini ...
+    {
+        title: "If I Had A Gun",
+        artist: "Noel Gallagher's High Flying Birds",
+        src: 'src/if-i-had-a-gun.mp3',
+        lyrics: [
+            {time: 0, text: "♫"},
+            {time: 3.5, text: "Let me fly you to the moon"},
+            {time: 7.2, text: "My eyes have always"},
+            {time: 9.7, text: "Followed you"},
+            {time: 11.1, text: "Around the room"},
+            {time: 13.3, text: "'Cause you're the only"},
+            {time: 16.0, text: "God that I"},
+            {time: 17.5, text: "Will ever need"},
+            {time: 19.8, text: "I'm holding on"},
+            {time: 21.0, text: "I'm waiting for"},
+            {time: 22.5, text: "The moment to find me"},
+        ] // Kosongkan array jika belum sempat isi lirik
+    },
+    {
+        title: "Gunslinger",
+        artist: "Avenged Sevenfold",
+        src: 'src/gunslinger.mp3',
+        lyrics: [
+            {time: 0, text: "'Cause with all"},
+            {time: 0.8, text: "These things we do"},
+            {time: 3.0, text: "It don't matter"},
+            {time: 4.3, text: "When I'm coming"},
+            {time: 5.5, text: "Home to you"},
+            {time: 7.5, text: "I've always been true"},
+            {time: 10.3, text: "I've waited so long"},
+            {time: 12.5, text: "Just to come hold you"},
+            {time: 16.0, text: "I'm making it through"},
+            {time: 19.0, text: "It's been far too long"},
+            {time: 22.0, text: "We've proven our love"},
+            {time: 24.3, text: "Over time's so strong"},
+            {time: 27.6, text: "In all that we do"},
+            {time: 31.0, text: "The stars in the night"},
+            {time: 33.7, text: "They lend me their light"},
+            {time: 36.5, text: "To bring me closer"},
+            {time: 39.2, text: "To heaven with you"},
+            {time: 42.0, text: "♫"},
+        ]
+    },
 ];
 
 export default songs;
